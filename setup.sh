@@ -49,6 +49,10 @@ brew install httpie
 brew install tig
 # install ag
 brew install ag
+# install direnv
+brew install direnv
+# install reattach-to-user-namespace
+brew install reattach-to-user-namespace
 # install google chrome
 brew cask install google-chrome
 # install iterm2
