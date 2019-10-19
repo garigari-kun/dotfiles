@@ -18,6 +18,8 @@ brew install fish
 curl -L https://get.oh-my.fish | fish
 # install peco
 brew install peco
+# omf
+omf install peco
 # install tmux
 brew install tmux
 # install golang
