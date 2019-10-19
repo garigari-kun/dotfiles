@@ -63,7 +63,7 @@ brew cask install sequel-pro
 brew cask install slack
 # install virtualbox
 brew cask install virtualbox
-# install atom
-brew cask install atom
 # install vscode
-brew cask install vscode
+brew cask install visual-studio-code
+# install spectacle
+brew cask install spectacle
