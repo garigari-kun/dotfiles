@@ -1,5 +1,5 @@
 # Setup
-```sh
+```rb
 $ curl -O https://raw.githubusercontent.com/garigari-kun/dotfiles/master/setup.sh
 $ ./setup.sh
 $ curl -O https://raw.githubusercontent.com/garigari-kun/dotfiles/master/fish.sh
@@ -9,7 +9,7 @@ $ homesick symlink dotfiles
 ```
 
 # How to maintain
-```sh
+```rb
 # Every time you changed these config
 # git commit then
 $ homesick push dotfiles
