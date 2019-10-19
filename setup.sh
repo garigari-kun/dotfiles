@@ -32,6 +32,8 @@ brew install rbenv
 brew install ruby-build
 # install readline
 brew install readline
+# homesick
+gem install homesick
 # install SpaceVim
 curl -sLf https://spacevim.org/install.sh | bash
 # install docker
