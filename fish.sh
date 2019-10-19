@@ -4,5 +4,6 @@
 
 touch ~/.config/fish/config.fish
 echo "set fish_theme agnoster" > ~/.config/fish/config.fish
+. ~/.config/fish/config.fish
 git clone git@github.com:powerline/fonts.git
 ./install.sh
