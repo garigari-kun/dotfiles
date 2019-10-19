@@ -1,4 +1,6 @@
-#!/bin/sh
+#!/bin/bash
+
+set -u
 
 # Install homebrew and homebrew cask
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -37,6 +39,8 @@ brew install docker
 brew cask install docker
 # install k8s
 brew install kubernetes-cli
+# install terraform
+brew install terraform
 # install httpie
 brew install httpie
 # install tig
@@ -47,6 +51,8 @@ brew install ag
 brew cask install google-chrome
 # install iterm2
 brew cask install iterm2
+# dracula theme
+git clone https://github.com/dracula/iterm.git
 # install alfred
 brew cask install alfred
 # install sequel-pro
@@ -57,3 +63,5 @@ brew cask install slack
 brew cask install virtualbox
 # install atom
 brew cask install atom
+# install vscode
+brew cask install vscode
