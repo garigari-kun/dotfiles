@@ -325,10 +325,10 @@ augroup vimrc-sync-fromstart
 augroup END
 
 "" Remember cursor position
-augroup vimrc-remember-cursor-position
-  autocmd!
-  autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
-augroup END
+" augroup vimrc-remember-cursor-position
+"   autocmd!
+"   autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+" augroup END
 
 "" txt
 augroup vimrc-wrapping
@@ -711,3 +711,8 @@ set visualbell t_vb=
 set noerrorbells
 set scrolloff=5
 
+" Speeding up ctrlp
+let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
+if executable('ag')
+      let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+endif
