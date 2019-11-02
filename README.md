@@ -14,3 +14,9 @@ $ homesick symlink dotfiles
 # git commit then
 $ homesick push dotfiles
 ```
+
+# How to use Settings sync for VSCode
+```
+- Upload: Shift + Alt + U 
+- Download: Shift + Alt + D
+```
