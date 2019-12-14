@@ -36,6 +36,11 @@ brew install ruby-build
 brew install readline
 # homesick
 gem install homesick
+# ricty for powerline font
+brew tap sanemat/font
+brew install ricty --with-powerline
+cp -f /usr/local/opt/ricty/share/fonts/Ricty*.ttf ~/Library/Fonts/
+fc-cache -vf
 # install SpaceVim
 curl -sLf https://spacevim.org/install.sh | bash
 # install docker
