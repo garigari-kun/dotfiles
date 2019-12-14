@@ -3,9 +3,9 @@
 # $ chsh -s /usr/local/bin/fish # デフォルトシェルをfishに変更
 
 touch ~/.config/fish/config.fish
-echo "set fish_theme agnoster" > ~/.config/fish/config.fish
+echo "set fish_theme bobthefish" > ~/.config/fish/config.fish
 . ~/.config/fish/config.fish
-omf install agnoster
+omf install bobthefish
 git clone https://github.com/powerline/fonts.git
 cd fonts
 ./install.sh
