@@ -44,7 +44,13 @@ Plug 'avelino/vim-bootstrap-updater'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-rhubarb' " required by fugitive to :Gbrowse
 Plug 'ctrlpvim/ctrlp.vim'
-
+Plug 'stephpy/vim-yaml'
+Plug 'andrewstuart/vim-kubernetes'
+Plug 'alvan/vim-closetag'
+Plug 'bronson/vim-trailing-whitespace'
+Plug 'tpope/vim-surround'
+Plug 'vickenty/vim-hive'
+Plug 'hashivim/vim-terraform'
 
 if isdirectory('/usr/local/opt/fzf')
   Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
@@ -68,6 +74,7 @@ Plug 'honza/vim-snippets'
 
 "" Color
 Plug 'tomasr/molokai'
+Plug 'dracula/vim'
 
 "*****************************************************************************
 "" Custom bundles
@@ -118,6 +125,14 @@ Plug 'HerringtonDarkholme/yats.vim'
 " vuejs
 Plug 'posva/vim-vue'
 Plug 'leafOfTree/vim-vue-plugin'
+
+autocmd FileType vue syntax sync fromstart
+
+
+
+" vim-rspec configurations
+let g:rspec_command = "!bundle exec rspec -f d -c {spec}"
+
 
 
 
@@ -187,7 +202,10 @@ set ruler
 set number
 
 let no_buffers_menu=1
-silent! colorscheme molokai
+" silent! colorscheme molokai
+let g:dracula_colorterm = 0
+let g:dracula_italic = 0
+silent! colorscheme dracula 
 
 set mousemodel=popup
 set t_Co=256
@@ -716,3 +734,16 @@ let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
 if executable('ag')
       let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 endif
+" set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.jpg,*.png,*.svg,*.rpm
+" let g:ctrlp_custom_ignore = '\v[\/](vendor|node_modules)$'
+let g:ctrlp_custom_ignore = {
+	\   'dir' : '\.git$\|build$\|bower_components\|node_modules\|dist\|target\|vendor\|public',
+	\ 	'file' : '\v\.(exe|dll|lib|so|swp|zip|jpg|png|svg|rpm)$'
+	\ }
+" vim-closetag
+let g:closetag_filenames = '*.html,*.vue'
+
+" digdag
+autocmd BufNewFile,BufRead *.dig set filetype=yaml
+
+"vim-terraform
