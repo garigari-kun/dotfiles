@@ -12,7 +12,7 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 brew install git
 git --version
 # install vim
-brew install vim --with-override-system-vi
+brew install vim
 # install fish
 brew install fish
 curl -L https://get.oh-my.fish | fish
@@ -78,3 +78,5 @@ brew cask install virtualbox
 brew cask install visual-studio-code
 # install spectacle
 brew cask install spectacle
+brew cask install 1password
+brew cask install spotify
