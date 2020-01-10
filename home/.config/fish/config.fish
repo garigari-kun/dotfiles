@@ -1,5 +1,7 @@
 set -x GOPATH $HOME/Dev/go
 set -x PATH $PATH $GOPATH/bin
+set -x PATH $HOME/.rbenv/bin $PATH
+status --is-interactive; and source (rbenv init -|psub)
 
 alias k 'kubectl'
 alias kx 'kubectx'

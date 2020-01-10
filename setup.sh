@@ -12,7 +12,7 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 brew install git
 git --version
 # install vim
-brew install vim
+brew install vim -- --with-override-system-vim
 # install fish
 brew install fish
 curl -L https://get.oh-my.fish | fish
