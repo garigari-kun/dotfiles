@@ -80,3 +80,4 @@ brew cask install visual-studio-code
 brew cask install spectacle
 brew cask install 1password
 brew cask install spotify
+brew cask install alacritty
