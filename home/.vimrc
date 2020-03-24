@@ -43,7 +43,7 @@ Plug 'Yggdroot/indentLine'
 Plug 'avelino/vim-bootstrap-updater'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-rhubarb' " required by fugitive to :Gbrowse
-Plug 'ctrlpvim/ctrlp.vim'
+" Plug 'ctrlpvim/ctrlp.vim'
 Plug 'stephpy/vim-yaml'
 Plug 'andrewstuart/vim-kubernetes'
 Plug 'alvan/vim-closetag'
@@ -51,6 +51,8 @@ Plug 'bronson/vim-trailing-whitespace'
 Plug 'tpope/vim-surround'
 Plug 'vickenty/vim-hive'
 Plug 'hashivim/vim-terraform'
+Plug 'rking/ag.vim'
+
 
 if isdirectory('/usr/local/opt/fzf')
   Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
@@ -66,7 +68,7 @@ Plug 'Shougo/vimproc.vim', {'do': g:make}
 
 "" Vim-Session
 Plug 'xolox/vim-misc'
-Plug 'xolox/vim-session'
+" Plug 'xolox/vim-session'
 
 "" Snippets
 Plug 'SirVer/ultisnips'
@@ -129,11 +131,8 @@ Plug 'leafOfTree/vim-vue-plugin'
 autocmd FileType vue syntax sync fromstart
 
 
-
 " vim-rspec configurations
 let g:rspec_command = "!bundle exec rspec -f d -c {spec}"
-
-
 
 
 "*****************************************************************************
@@ -270,12 +269,12 @@ if exists("*fugitive#statusline")
 endif
 
 " vim-airline
-let g:airline_theme = 'powerlineish'
-let g:airline#extensions#branch#enabled = 1
-let g:airline#extensions#ale#enabled = 1
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tagbar#enabled = 1
-let g:airline_skip_empty_sections = 1
+" let g:airline_theme = 'powerlineish'
+" let g:airline#extensions#branch#enabled = 1
+" let g:airline#extensions#ale#enabled = 1
+" let g:airline#extensions#tabline#enabled = 1
+" let g:airline#extensions#tagbar#enabled = 1
+" let g:airline_skip_empty_sections = 1
 
 "*****************************************************************************
 "" Abbreviations
@@ -639,23 +638,6 @@ map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
 
-" For ruby refactory
-if has('nvim')
-  runtime! macros/matchit.vim
-else
-  packadd! matchit
-endif
-
-" Ruby refactory
-nnoremap <leader>rap  :RAddParameter<cr>
-nnoremap <leader>rcpc :RConvertPostConditional<cr>
-nnoremap <leader>rel  :RExtractLet<cr>
-vnoremap <leader>rec  :RExtractConstant<cr>
-vnoremap <leader>relv :RExtractLocalVariable<cr>
-nnoremap <leader>rit  :RInlineTemp<cr>
-vnoremap <leader>rrlv :RRenameLocalVariable<cr>
-vnoremap <leader>rriv :RRenameInstanceVariable<cr>
-vnoremap <leader>rem  :RExtractMethod<cr>
 
 
 " typescript
@@ -683,43 +665,43 @@ endif
 "*****************************************************************************
 
 " vim-airline
-if !exists('g:airline_symbols')
-  let g:airline_symbols = {}
-endif
+" if !exists('g:airline_symbols')
+"   let g:airline_symbols = {}
+" endif
 
-if !exists('g:airline_powerline_fonts')
-  let g:airline#extensions#tabline#left_sep = ' '
-  let g:airline#extensions#tabline#left_alt_sep = '|'
-  let g:airline_left_sep          = '▶'
-  let g:airline_left_alt_sep      = '»'
-  let g:airline_right_sep         = '◀'
-  let g:airline_right_alt_sep     = '«'
-  let g:airline#extensions#branch#prefix     = '⤴' "➔, ➥, ⎇
-  let g:airline#extensions#readonly#symbol   = '⊘'
-  let g:airline#extensions#linecolumn#prefix = '¶'
-  let g:airline#extensions#paste#symbol      = 'ρ'
-  let g:airline_symbols.linenr    = '␊'
-  let g:airline_symbols.branch    = '⎇'
-  let g:airline_symbols.paste     = 'ρ'
-  let g:airline_symbols.paste     = 'Þ'
-  let g:airline_symbols.paste     = '∥'
-  let g:airline_symbols.whitespace = 'Ξ'
-else
-  let g:airline#extensions#tabline#left_sep = ''
-  let g:airline#extensions#tabline#left_alt_sep = ''
+" if !exists('g:airline_powerline_fonts')
+"   let g:airline#extensions#tabline#left_sep = ' '
+"   let g:airline#extensions#tabline#left_alt_sep = '|'
+"   let g:airline_left_sep          = '▶'
+"   let g:airline_left_alt_sep      = '»'
+"   let g:airline_right_sep         = '◀'
+"   let g:airline_right_alt_sep     = '«'
+"   let g:airline#extensions#branch#prefix     = '⤴' "➔, ➥, ⎇
+"   let g:airline#extensions#readonly#symbol   = '⊘'
+"   let g:airline#extensions#linecolumn#prefix = '¶'
+"   let g:airline#extensions#paste#symbol      = 'ρ'
+"   let g:airline_symbols.linenr    = '␊'
+"   let g:airline_symbols.branch    = '⎇'
+"   let g:airline_symbols.paste     = 'ρ'
+"   let g:airline_symbols.paste     = 'Þ'
+"   let g:airline_symbols.paste     = '∥'
+"   let g:airline_symbols.whitespace = 'Ξ'
+" else
+"   let g:airline#extensions#tabline#left_sep = ''
+"   let g:airline#extensions#tabline#left_alt_sep = ''
 
-  " powerline symbols
-  let g:airline_left_sep = ''
-  let g:airline_left_alt_sep = ''
-  let g:airline_right_sep = ''
-  let g:airline_right_alt_sep = ''
-  let g:airline_symbols.branch = ''
-  let g:airline_symbols.readonly = ''
-  let g:airline_symbols.linenr = ''
-endif
+"   " powerline symbols
+"   let g:airline_left_sep = ''
+"   let g:airline_left_alt_sep = ''
+"   let g:airline_right_sep = ''
+"   let g:airline_right_alt_sep = ''
+"   let g:airline_symbols.branch = ''
+"   let g:airline_symbols.readonly = ''
+"   let g:airline_symbols.linenr = ''
+" endif
 
 " ctrlp settings
-let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+" let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
 
 " key settings
@@ -729,21 +711,12 @@ set visualbell t_vb=
 set noerrorbells
 set scrolloff=5
 
-" Speeding up ctrlp
-let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
-if executable('ag')
-      let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-endif
-" set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.jpg,*.png,*.svg,*.rpm
-" let g:ctrlp_custom_ignore = '\v[\/](vendor|node_modules)$'
-let g:ctrlp_custom_ignore = {
-	\   'dir' : '\.git$\|build$\|bower_components\|node_modules\|dist\|target\|vendor\|public',
-	\ 	'file' : '\v\.(exe|dll|lib|so|swp|zip|jpg|png|svg|rpm)$'
-	\ }
+
 " vim-closetag
 let g:closetag_filenames = '*.html,*.vue'
 
 " digdag
 autocmd BufNewFile,BufRead *.dig set filetype=yaml
 
-"vim-terraform
+
+nnoremap <silent> <C-p> :FZF<CR>
