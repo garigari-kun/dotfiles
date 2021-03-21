@@ -52,6 +52,8 @@ Plug 'tpope/vim-surround'
 Plug 'vickenty/vim-hive'
 Plug 'hashivim/vim-terraform'
 Plug 'rking/ag.vim'
+Plug 'rodjek/vim-puppet'
+Plug 'ekalinin/Dockerfile.vim'
 
 
 if isdirectory('/usr/local/opt/fzf')

@@ -14,7 +14,6 @@ cd fonts
 cd $HOME
 open ./iterm/Dracula.itermcolors
 
-
 # Setting fonts
 # iterm - preferences - Profiles - Text - Select some power line fonts
 
