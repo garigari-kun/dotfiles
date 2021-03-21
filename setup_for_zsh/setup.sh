@@ -5,6 +5,7 @@ brew update
 brew doctor
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 brew install git
+brew unlink vim && brew link vim
 brew install vim
 brew install peco
 brew install tmux
