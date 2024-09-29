@@ -22,12 +22,12 @@ brew install reattach-to-user-namespace
 brew install docker
 brew install google-chrome
 brew install iterm2
-brew install alfred
 brew install sequel-pro
 brew install slack
 brew install virtualbox
 brew install visual-studio-code
 brew install spectacle
 brew install 1password
-brew install spotify
 brew install alacritty
+brew install raycast
+brew install clipy
